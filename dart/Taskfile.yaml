@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  test:
+    cmds:
+      - fvm flutter test
+  coverage:
+    cmds:
+      - fvm flutter test --no-test-assets --coverage  
+      - genhtml coverage/lcov.info -o coverage
+      - open coverage/index.html
+
